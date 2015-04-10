@@ -55,7 +55,7 @@ import org.apache.http.util.EntityUtils;
 @WebServlet(urlPatterns = { "/2.API/HttpPost/Authorise3dSecurePayment" })
 public class Authorise3dSecurePaymentHttpPost extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		/**
 		 * HTTP Post settings
@@ -102,8 +102,8 @@ public class Authorise3dSecurePaymentHttpPost extends HttpServlet {
 			new BasicNameValuePair("paymentRequest3d.merchantAccount", "YourMerchantAccount"),
 			new BasicNameValuePair("paymentRequest3d.browserInfo.userAgent", request.getHeader("User-Agent")),
 			new BasicNameValuePair("paymentRequest3d.browserInfo.acceptHeader", request.getHeader("Accept")),
-			new BasicNameValuePair("paymentRequest3d.md", "31h..........vOXek7w"),
-			new BasicNameValuePair("paymentRequest3d.paResponse", "eNqtmF........wGVA4Ch"),
+			new BasicNameValuePair("paymentRequest3d.md", request.getParameter("MD")),
+			new BasicNameValuePair("paymentRequest3d.paResponse", request.getParameter("PaRes")),
 			new BasicNameValuePair("paymentRequest3d.shopperIP", "123.123.123.123")
 			);
 

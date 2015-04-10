@@ -44,7 +44,7 @@ import com.adyen.services.payment.ServiceException;
 @WebServlet(urlPatterns = { "/2.API/Soap/Authorise3dSecurePayment" })
 public class Authorise3dSecurePaymentSoap extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		/**
 		 * SOAP settings
@@ -91,8 +91,8 @@ public class Authorise3dSecurePaymentSoap extends HttpServlet {
 		// Create new payment request
 		PaymentRequest3D paymentRequest = new PaymentRequest3D();
 		paymentRequest.setMerchantAccount("YourMerchantAccount");
-		paymentRequest.setMd("31h..........vOXek7w");
-		paymentRequest.setPaResponse("eNqtmF........wGVA4Ch");
+		paymentRequest.setMd(request.getParameter("MD"));
+		paymentRequest.setPaResponse(request.getParameter("PaRes"));
 		paymentRequest.setShopperIP("123.123.123.123");
 
 		// Set browser info
