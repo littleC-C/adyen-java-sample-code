@@ -30,7 +30,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 /**
- * Authorise 3D Secure payment (SOAP)
+ * Authorise 3D Secure payment (HTTP Post)
  * 
  * 3D Secure (Verifed by VISA / MasterCard SecureCode) is an additional authentication
  * protocol that involves the shopper being redirected to their card issuer where their
@@ -42,7 +42,7 @@ import org.apache.http.util.EntityUtils;
  * 2. Your integration should support redirecting the shopper to the card issuer and submitting
  *    a second API call to complete the payment.
  *
- * This example demonstrates the second API call to complete the payment using SOAP.
+ * This example demonstrates the second API call to complete the payment using HTTP Post.
  * See the API Manual for a full explanation of the steps required to process 3D Secure payments.
  * 
  * Please note: using our API requires a web service user. Set up your Webservice user:
@@ -94,7 +94,7 @@ public class Authorise3dSecurePaymentHttpPost extends HttpServlet {
 		                      it is used in a number of risk checks, for example, the number of payment
 		                      attempts and location based checks.
 		* </pre>
-		 */
+		*/
 		List<NameValuePair> postParameters = new ArrayList<NameValuePair>();
 		Collections.addAll(postParameters,
 			new BasicNameValuePair("action", "Payment.authorise3d"),
