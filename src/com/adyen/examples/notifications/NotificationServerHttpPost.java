@@ -20,7 +20,7 @@ import org.apache.commons.codec.binary.Base64;
  * Whenever a payment is made, a modification is processed or a report is available we will notify you. The
  * notifications tell you for instance if an authorisation was performed successfully. Notifications should be used to
  * keep your backoffice systems up to date with the status of each payment and modification. Notifications are sent
- * using a SOAP call or using HTTP POST to a server of your choice. This file describes how HTTP Post notifcations can
+ * using SOAP, HTTP POST or JSON to a server of your choice. This file describes how HTTP Post notifcations can
  * be received in Java.
  * 
  * @link /3.Notifications/HttpPost/NotificationServer
@@ -28,7 +28,7 @@ import org.apache.commons.codec.binary.Base64;
  */
 
 @WebServlet(urlPatterns = { "/3.Notifications/HttpPost/NotificationServer" })
-public class NotificationServer extends HttpServlet {
+public class NotificationServerHttpPost extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

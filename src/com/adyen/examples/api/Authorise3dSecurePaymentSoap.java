@@ -86,7 +86,7 @@ public class Authorise3dSecurePaymentSoap extends HttpServlet {
 		                      it is used in a number of risk checks, for example, the number of payment
 		                      attempts and location based checks.
 		* </pre>
-		 */
+		*/
 
 		// Create new payment request
 		PaymentRequest3D paymentRequest = new PaymentRequest3D();

@@ -10,20 +10,36 @@ The code examples in this repository help you integrate with the Adyen platform 
   - CreatePaymentUrl               : Create payment URL on our HPP
 2.API
   - HttpPost
+    - Authorise3dSecurePayment     : Authorise a 3D Secure payment using HTTP Post
+    - Create3dSecurePayment        : Create a 3D Secure payment using HTTP Post
     - CreatePaymentAPI             : Create a payment via our API using HTTP Post
     - CreatePaymentCSE             : Create a Client-Side Encrypted payment using HTTP Post
+  - Json
+    - Authorise3dSecurePayment     : Authorise a 3D Secure payment using JSON
+    - Create3dSecurePayment        : Create a 3D Secure payment using JSON
+    - CreatePaymentAPI             : Create a payment via our API using JSON
+    - CreatePaymentCSE             : Create a Client-Side Encrypted payment using JSON
   - Soap
+    - Authorise3dSecurePayment     : Authorise a 3D Secure payment using SOAP
+    - Create3dSecurePayment        : Create a 3D Secure payment using SOAP
     - CreatePaymentAPI             : Create a payment via our API using SOAP
     - CreatePaymentCSE             : Create a Client-Side Encrypted payment using SOAP
 3.Notifications
   - HttpPost
     - NotificationServer           : Receive our notifications using HTTP Post
+  - Json
+    - NotificationServer           : Receive our notifications using JSON
 4.Modifications
   - HttpPost
     - CancelOrRefundPayment        : Cancel or refund a payment using HTTP Post
     - CancelPayment                : Cancel a payment using HTTP Post
     - CapturePayment               : Capture a payment using HTTP Post
     - RefundPayment                : Request a refund using HTTP Post
+  - Json
+    - CancelOrRefundPayment        : Cancel or refund a payment using JSON
+    - CancelPayment                : Cancel a payment using JSON
+    - CapturePayment               : Capture a payment using JSON
+    - RefundPayment                : Request a refund using JSON
   - Soap
     - CancelOrRefundPayment        : Cancel or refund a payment using SOAP
     - CancelPayment                : Cancel a payment using SOAP
@@ -34,6 +50,10 @@ The code examples in this repository help you integrate with the Adyen platform 
     - CreateRecurringPayment       : Create a recurring payment using HTTP Post
     - DisableRecurringContract     : Disable a recurring contract using HTTP Post
     - RetrieveRecurringContract    : Retrieve a recurring contract using HTTP Post
+  - Json
+    - CreateRecurringPayment       : Create a recurring payment using JSON
+    - DisableRecurringContract     : Disable a recurring contract using JSON
+    - RetrieveRecurringContract    : Retrieve a recurring contract using JSON
   - Soap
     - CreateRecurringPayment       : Create a recurring payment using SOAP
     - DisableRecurringContract     : Disable a recurring contract using SOAP
