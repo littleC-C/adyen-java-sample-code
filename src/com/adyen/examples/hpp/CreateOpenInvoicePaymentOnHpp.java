@@ -69,7 +69,7 @@ public class CreateOpenInvoicePaymentOnHpp extends HttpServlet {
 		String paymentAmount = "10000000";
 		String currencyCode = "EUR";
 		String shipBeforeDate = new SimpleDateFormat("yyyy-MM-dd").format(shippingDate);
-		String skinCode = "tdj7pst6";
+		String skinCode = "YourSkinCode";
 		String merchantAccount = "YourMerchantAccount";
 		String sessionValidity = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate);
 		String shopperLocale = "en_US";
