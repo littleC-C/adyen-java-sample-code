@@ -98,22 +98,22 @@ public class CreatePaymentOnHpp_SHA_256 extends HttpServlet {
 
 		
 		// Sort order is important (using natural ordering)
-        SortedMap<String, String> params = new TreeMap<>();
-        params.put("merchantAccount", "YourMerchantAccount");
-        params.put("currencyCode", "EUR");
-        params.put("paymentAmount", "199" );
-        params.put("sessionValidity", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate));
-        params.put("shipBeforeDate", new SimpleDateFormat("yyyy-MM-dd").format(shippingDate));
-        params.put("shopperLocale", "en_GB"); 
-        params.put("merchantReference", "TEST-PAYMENT-" + new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss").format(currentDate));
-        params.put("skinCode", "YourSkinCode");
-        params.put("countryCode", "NL");
-        params.put("shopperEmail", "");
-        params.put("shopperReference", "");
-        params.put("allowedMethods", "");
-        params.put("blockedMethods", "");
-        params.put("offset", "");
-        params.put("orderData", compressString("Orderdata to display on the HPP can be put here"));
+	        SortedMap<String, String> params = new TreeMap<>();
+	        params.put("merchantAccount", "YourMerchantAccount");
+	        params.put("currencyCode", "EUR");
+	        params.put("paymentAmount", "199" );
+	        params.put("sessionValidity", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate));
+	        params.put("shipBeforeDate", new SimpleDateFormat("yyyy-MM-dd").format(shippingDate));
+	        params.put("shopperLocale", "en_GB"); 
+	        params.put("merchantReference", "TEST-PAYMENT-" + new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss").format(currentDate));
+	        params.put("skinCode", "YourSkinCode");
+	        params.put("countryCode", "NL");
+	        params.put("shopperEmail", "");
+	        params.put("shopperReference", "");
+	        params.put("allowedMethods", "");
+	        params.put("blockedMethods", "");
+	        params.put("offset", "");
+	        params.put("orderData", compressString("Orderdata to display on the HPP can be put here"));
         
 		/**
 		 * Signing the form
@@ -122,13 +122,13 @@ public class CreatePaymentOnHpp_SHA_256 extends HttpServlet {
 		 * signature must be encrypted according to the procedure below.
 		 */
 
-	    // Calculate the data to sign
+		// Calculate the data to sign
 	        String signingData = Stream.concat(params.keySet().stream(), params.values().stream())
 	                .map(signingTest -> escapeVal(signingTest))
 	                .collect(Collectors.joining(":"));
         
      
-        // Create the signature and add it to the parameter map
+		// Create the signature and add it to the parameter map
 	        try {
 	            params.put("merchantSig",calculateHMAC(signingData, hmacKey));
 	        } catch (SignatureException e) {
@@ -138,10 +138,8 @@ public class CreatePaymentOnHpp_SHA_256 extends HttpServlet {
 	     
 
 		// Set request parameters for use on the JSP page
-	    
-	    params.forEach((keyName, keyValue) -> request.setAttribute(keyName, keyValue));   
-	    
-	    request.setAttribute("hppUrl", hppUrl);
+	        params.forEach((keyName, keyValue) -> request.setAttribute(keyName, keyValue));
+	        request.setAttribute("hppUrl", hppUrl);
 	    
 		// Set correct character encoding
 		response.setCharacterEncoding("UTF-8");
