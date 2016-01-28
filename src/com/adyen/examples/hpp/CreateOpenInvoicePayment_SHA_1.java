@@ -290,7 +290,7 @@ public class CreateOpenInvoicePayment_SHA_1 extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		// Forward request data to corresponding JSP page
-		request.getRequestDispatcher("/1.HPP/create-open-invoice-payment-on-hpp.jsp").forward(request, response);
+		request.getRequestDispatcher("/1.HPP/create-payment-on-hpp.jsp").forward(request, response);
 	}
 
 	/**
