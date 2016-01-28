@@ -111,14 +111,14 @@ public class CreateOpenInvoicePayment_SHA_1 extends HttpServlet {
 		}
 				
 		// deliveryAddress
-        Map<String, String> deliveryAddress = new HashMap<>();
-        deliveryAddress.put("deliveryAddress.city", billingAddress.get("billingAddress.city"));
-        deliveryAddress.put("deliveryAddress.country", billingAddress.get("billingAddress.country"));
-        deliveryAddress.put("deliveryAddress.houseNumberOrName",  billingAddress.get("billingAddress.houseNumberOrName"));
-        deliveryAddress.put("deliveryAddress.postalCode", billingAddress.get("billingAddress.postalCode"));
-        deliveryAddress.put("deliveryAddress.stateOrProvince", billingAddress.get("billingAddress.stateOrProvince"));
-        deliveryAddress.put("deliveryAddress.street", billingAddress.get("billingAddress.street"));
-        deliveryAddress.put("deliveryAddressType", billingAddress.get("billingAddressType"));
+	        Map<String, String> deliveryAddress = new HashMap<>();
+	        deliveryAddress.put("deliveryAddress.city", billingAddress.get("billingAddress.city"));
+	        deliveryAddress.put("deliveryAddress.country", billingAddress.get("billingAddress.country"));
+	        deliveryAddress.put("deliveryAddress.houseNumberOrName",  billingAddress.get("billingAddress.houseNumberOrName"));
+	        deliveryAddress.put("deliveryAddress.postalCode", billingAddress.get("billingAddress.postalCode"));
+	        deliveryAddress.put("deliveryAddress.stateOrProvince", billingAddress.get("billingAddress.stateOrProvince"));
+	        deliveryAddress.put("deliveryAddress.street", billingAddress.get("billingAddress.street"));
+	        deliveryAddress.put("deliveryAddressType", billingAddress.get("billingAddressType"));
         
 		// deliveryAddressSig
 		String signingDeliveryAddressSig =      
