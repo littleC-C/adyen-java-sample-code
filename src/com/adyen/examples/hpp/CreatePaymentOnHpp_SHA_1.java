@@ -29,7 +29,7 @@ import org.apache.commons.codec.binary.Base64;
  * @author Created by Adyen - Payments Made Easy
  */
 
-@WebServlet(urlPatterns = { "/1.HPP/CreatePaymentOnHpp" })
+@WebServlet(urlPatterns = { "/1.HPP/CreatePaymentOnHppSHA1" })
 public class CreatePaymentOnHpp_SHA_1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
