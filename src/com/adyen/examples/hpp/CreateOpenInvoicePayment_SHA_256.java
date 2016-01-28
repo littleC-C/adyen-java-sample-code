@@ -185,13 +185,13 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 		 * signature must be encrypted according to the procedure below.
 		 */
 
-	    // Calculate the data to sign
+	    	// Calculate the data to sign
 	        String signingData = Stream.concat(params.keySet().stream(), params.values().stream())
 	                .map(signingTest -> escapeVal(signingTest))
 	                .collect(Collectors.joining(":"));
         
      
-        // Create the signature and add it to the parameter map
+		 // Create the signature and add it to the parameter map
 	        try {
 	            params.put("merchantSig",calculateHMAC(signingData, hmacKey));
 	        } catch (SignatureException e) {
@@ -202,8 +202,8 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 
 		// Set request parameters for use on the JSP page
 	    
-	    params.forEach((keyName, keyValue) -> request.setAttribute(keyName, keyValue));
-	    request.setAttribute("hppUrl", hppUrl);
+		params.forEach((keyName, keyValue) -> request.setAttribute(keyName, keyValue));
+		request.setAttribute("hppUrl", hppUrl);
 	    
 		// Set correct character encoding
 		response.setCharacterEncoding("UTF-8");
