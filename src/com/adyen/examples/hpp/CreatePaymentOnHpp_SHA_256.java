@@ -35,7 +35,7 @@ import com.google.common.io.BaseEncoding;
  * @author Created by Adyen - Payments Made Easy
  */
 
-@WebServlet(urlPatterns = { "/1.HPP/CreatePaymentOnHpp" })
+@WebServlet(urlPatterns = { "/1.HPP/CreatePaymentOnHppSHA256" })
 public class CreatePaymentOnHpp_SHA_256 extends HttpServlet {
 
 	private final static String HMAC_SHA256_ALGORITHM = "HmacSHA256";
