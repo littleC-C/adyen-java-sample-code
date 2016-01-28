@@ -41,7 +41,7 @@ import org.apache.commons.codec.binary.Base64;
  */
 
 @WebServlet(urlPatterns = { "/1.HPP/CreateOpenInvoicePaymentOnHpp" })
-public class CreateOpenInvoicePaymentOnHpp extends HttpServlet {
+public class CreateOpenInvoicePayment_SHA_1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
