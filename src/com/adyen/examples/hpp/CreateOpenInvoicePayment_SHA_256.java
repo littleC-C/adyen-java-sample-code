@@ -98,85 +98,85 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 		
 		// Sort order is important (using natural ordering)
 
-        SortedMap<String, String> params = new TreeMap<>();
-        params.put("merchantAccount", "YourMerchantAccount");
-        params.put("currencyCode", "EUR");
-        params.put("paymentAmount", "10000000");
-        params.put("sessionValidity", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate));
-        params.put("shipBeforeDate", new SimpleDateFormat("yyyy-MM-dd").format(shippingDate));
-        params.put("shopperLocale", "en_GB"); 
-        params.put("merchantReference", "TEST-PAYMENT-" + new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss").format(currentDate));
-        params.put("skinCode", "YourSkinCode");
-        params.put("countryCode", "DE");
-        params.put("shopperEmail", "YourShopperEmail");
-        params.put("shopperReference", "TestShopperTest");
-        params.put("allowedMethods", "");
-        params.put("blockedMethods", "");
-        params.put("offset", "");
-        params.put("orderData", compressString("Orderdata to display on the HPP can be put here"));
-        params.put("brandCode", "klarna");
-        params.put("issuerId", "");
-        
-        
-    	// billingAddress
- 	params.put("billingAddress.city", "Neuss");
- 	params.put("billingAddress.country","DE");
- 	params.put("billingAddress.houseNumberOrName", "14");
- 	params.put("billingAddress.postalCode", "41460");
- 	params.put("billingAddress.stateOrProvince", "");
- 	params.put("billingAddress.street", "Hellersbergstraße");
- 	params.put("billingAddressType", "1");
-     		
-     	
-        // deliveryAddress
-        params.put("deliveryAddress.city", params.get("billingAddress.city"));
-        params.put("deliveryAddress.country", params.get("billingAddress.country"));
-        params.put("deliveryAddress.houseNumberOrName",  params.get("billingAddress.houseNumberOrName"));
-        params.put("deliveryAddress.postalCode", params.get("billingAddress.postalCode"));
-        params.put("deliveryAddress.stateOrProvince", params.get("billingAddress.stateOrProvince"));
-        params.put("deliveryAddress.street", params.get("billingAddress.street"));
-        params.put("deliveryAddressType", params.get("billingAddressType"));
-            
-    		
-	// Shopper data
-	params.put("shopper.firstName", "Testperson-de");
-	params.put("shopper.infix", "");
-	params.put("shopper.lastName", "Approved");
-	params.put("shopper.gender", "MALE");
-	params.put("shopper.dateOfBirthDayOfMonth", "07");
-	params.put("shopper.dateOfBirthMonth", "07");
-	params.put("shopper.dateOfBirthYear", "1960");
-	params.put("shopper.telephoneNumber", "01522113356");
-	params.put("shopperType", "1");
-            
-	// invoice lines
-	params.put("openinvoicedata.numberOfLines", "3");
-	params.put("openinvoicedata.refundDescription", params.get("merchantReference"));
-	
-	params.put("openinvoicedata.line1.currencyCode", "EUR");
-	params.put("openinvoicedata.line1.description", "Apples");
-	params.put("openinvoicedata.line1.itemAmount", "7860");
-	params.put("openinvoicedata.line1.itemVatAmount", "1117");
-	params.put("openinvoicedata.line1.itemVatPercentage", "1900");
-	params.put("openinvoicedata.line1.numberOfItems","1");
-	params.put("openinvoicedata.line1.vatCategory", "High");
-	
-	params.put("openinvoicedata.line2.currencyCode", "EUR");
-	params.put("openinvoicedata.line2.description", "Pear");
-	params.put("openinvoicedata.line2.itemAmount", "6754");
-	params.put("openinvoicedata.line2.itemVatAmount", "1117");
-	params.put("openinvoicedata.line2.itemVatPercentage", "1900");
-	params.put("openinvoicedata.line2.numberOfItems","1");
-	params.put("openinvoicedata.line2.vatCategory", "High");
-	
-	params.put("openinvoicedata.line3.currencyCode", "EUR");
-	params.put("openinvoicedata.line3.description", "Pineapple");
-	params.put("openinvoicedata.line3.itemAmount", "9876");
-	params.put("openinvoicedata.line3.itemVatAmount", "1117");
-	params.put("openinvoicedata.line3.itemVatPercentage", "1900");
-	params.put("openinvoicedata.line3.numberOfItems","1");
-	params.put("openinvoicedata.line3.vatCategory", "High");
-       
+	        SortedMap<String, String> params = new TreeMap<>();
+	        params.put("merchantAccount", "YourMerchantAccount");
+	        params.put("currencyCode", "EUR");
+	        params.put("paymentAmount", "10000000");
+	        params.put("sessionValidity", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate));
+	        params.put("shipBeforeDate", new SimpleDateFormat("yyyy-MM-dd").format(shippingDate));
+	        params.put("shopperLocale", "en_GB"); 
+	        params.put("merchantReference", "TEST-PAYMENT-" + new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss").format(currentDate));
+	        params.put("skinCode", "YourSkinCode");
+	        params.put("countryCode", "DE");
+	        params.put("shopperEmail", "YourShopperEmail");
+	        params.put("shopperReference", "TestShopperTest");
+	        params.put("allowedMethods", "");
+	        params.put("blockedMethods", "");
+	        params.put("offset", "");
+	        params.put("orderData", compressString("Orderdata to display on the HPP can be put here"));
+	        params.put("brandCode", "klarna");
+	        params.put("issuerId", "");
+	        
+	        
+	    	// billingAddress
+	 	params.put("billingAddress.city", "Neuss");
+	 	params.put("billingAddress.country","DE");
+	 	params.put("billingAddress.houseNumberOrName", "14");
+	 	params.put("billingAddress.postalCode", "41460");
+	 	params.put("billingAddress.stateOrProvince", "");
+	 	params.put("billingAddress.street", "Hellersbergstraße");
+	 	params.put("billingAddressType", "1");
+	     		
+	     	
+	        // deliveryAddress
+	        params.put("deliveryAddress.city", params.get("billingAddress.city"));
+	        params.put("deliveryAddress.country", params.get("billingAddress.country"));
+	        params.put("deliveryAddress.houseNumberOrName",  params.get("billingAddress.houseNumberOrName"));
+	        params.put("deliveryAddress.postalCode", params.get("billingAddress.postalCode"));
+	        params.put("deliveryAddress.stateOrProvince", params.get("billingAddress.stateOrProvince"));
+	        params.put("deliveryAddress.street", params.get("billingAddress.street"));
+	        params.put("deliveryAddressType", params.get("billingAddressType"));
+	            
+	    		
+		// Shopper data
+		params.put("shopper.firstName", "Testperson-de");
+		params.put("shopper.infix", "");
+		params.put("shopper.lastName", "Approved");
+		params.put("shopper.gender", "MALE");
+		params.put("shopper.dateOfBirthDayOfMonth", "07");
+		params.put("shopper.dateOfBirthMonth", "07");
+		params.put("shopper.dateOfBirthYear", "1960");
+		params.put("shopper.telephoneNumber", "01522113356");
+		params.put("shopperType", "1");
+	            
+		// invoice lines
+		params.put("openinvoicedata.numberOfLines", "3");
+		params.put("openinvoicedata.refundDescription", params.get("merchantReference"));
+		
+		params.put("openinvoicedata.line1.currencyCode", "EUR");
+		params.put("openinvoicedata.line1.description", "Apples");
+		params.put("openinvoicedata.line1.itemAmount", "7860");
+		params.put("openinvoicedata.line1.itemVatAmount", "1117");
+		params.put("openinvoicedata.line1.itemVatPercentage", "1900");
+		params.put("openinvoicedata.line1.numberOfItems","1");
+		params.put("openinvoicedata.line1.vatCategory", "High");
+		
+		params.put("openinvoicedata.line2.currencyCode", "EUR");
+		params.put("openinvoicedata.line2.description", "Pear");
+		params.put("openinvoicedata.line2.itemAmount", "6754");
+		params.put("openinvoicedata.line2.itemVatAmount", "1117");
+		params.put("openinvoicedata.line2.itemVatPercentage", "1900");
+		params.put("openinvoicedata.line2.numberOfItems","1");
+		params.put("openinvoicedata.line2.vatCategory", "High");
+		
+		params.put("openinvoicedata.line3.currencyCode", "EUR");
+		params.put("openinvoicedata.line3.description", "Pineapple");
+		params.put("openinvoicedata.line3.itemAmount", "9876");
+		params.put("openinvoicedata.line3.itemVatAmount", "1117");
+		params.put("openinvoicedata.line3.itemVatPercentage", "1900");
+		params.put("openinvoicedata.line3.numberOfItems","1");
+		params.put("openinvoicedata.line3.vatCategory", "High");
+	       
         
 		/**
 		 * Signing the form
