@@ -30,7 +30,7 @@ import org.apache.commons.codec.binary.Base64;
  */
 
 @WebServlet(urlPatterns = { "/1.HPP/CreatePaymentOnHpp" })
-public class CreatePaymentOnHpp extends HttpServlet {
+public class CreatePaymentOnHpp_SHA_1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
