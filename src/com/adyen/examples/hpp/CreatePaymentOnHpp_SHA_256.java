@@ -166,7 +166,8 @@ public class CreatePaymentOnHpp_SHA_256 extends HttpServlet {
 	private static String escapeVal(String val) {
         if(val == null) { return ""; }
         return val.replace("\\", "\\\\").replace(":", "\\:");
-    }
+    	}
+    	
 	// To calculate the HMAC SHA-256 
 	private static String calculateHMAC(String data, byte[] key)  throws java.security.SignatureException {
         try {
