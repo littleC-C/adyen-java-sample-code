@@ -40,7 +40,7 @@ import org.apache.commons.codec.binary.Base64;
  * @author Created by Adyen - Payments Made Easy
  */
 
-@WebServlet(urlPatterns = { "/1.HPP/CreateOpenInvoicePaymentOnHpp" })
+@WebServlet(urlPatterns = { "/1.HPP/CreateOpenInvoicePaymentOnHppSHA1" })
 public class CreateOpenInvoicePayment_SHA_1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
