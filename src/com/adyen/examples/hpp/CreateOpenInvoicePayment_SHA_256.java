@@ -98,27 +98,27 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 		
 		// Sort order is important (using natural ordering)
 
-	        SortedMap<String, String> params = new TreeMap<>();
-	        params.put("merchantAccount", "YourMerchantAccount");
-	        params.put("currencyCode", "EUR");
-	        params.put("paymentAmount", "10000000");
-	        params.put("sessionValidity", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate));
-	        params.put("shipBeforeDate", new SimpleDateFormat("yyyy-MM-dd").format(shippingDate));
-	        params.put("shopperLocale", "en_GB"); 
-	        params.put("merchantReference", "TEST-PAYMENT-" + new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss").format(currentDate));
-	        params.put("skinCode", "YourSkinCode");
-	        params.put("countryCode", "DE");
-	        params.put("shopperEmail", "YourShopperEmail");
-	        params.put("shopperReference", "TestShopperTest");
-	        params.put("allowedMethods", "");
-	        params.put("blockedMethods", "");
-	        params.put("offset", "");
-	        params.put("orderData", compressString("Orderdata to display on the HPP can be put here"));
-	        params.put("brandCode", "klarna");
-	        params.put("issuerId", "");
+        SortedMap<String, String> params = new TreeMap<>();
+        params.put("merchantAccount", "YourMerchantAccount");
+        params.put("currencyCode", "EUR");
+        params.put("paymentAmount", "10000000");
+        params.put("sessionValidity", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(sessionDate));
+        params.put("shipBeforeDate", new SimpleDateFormat("yyyy-MM-dd").format(shippingDate));
+        params.put("shopperLocale", "en_GB"); 
+        params.put("merchantReference", "TEST-PAYMENT-" + new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss").format(currentDate));
+        params.put("skinCode", "YourSkinCode");
+        params.put("countryCode", "DE");
+        params.put("shopperEmail", "YourShopperEmail");
+        params.put("shopperReference", "TestShopperTest");
+        params.put("allowedMethods", "");
+        params.put("blockedMethods", "");
+        params.put("offset", "");
+        params.put("orderData", compressString("Orderdata to display on the HPP can be put here"));
+        params.put("brandCode", "klarna");
+        params.put("issuerId", "");
 	        
 	        
-	    	// billingAddress
+	    // billingAddress
 	 	params.put("billingAddress.city", "Neuss");
 	 	params.put("billingAddress.country","DE");
 	 	params.put("billingAddress.houseNumberOrName", "14");
@@ -128,14 +128,14 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 	 	params.put("billingAddressType", "1");
 	     		
 	     	
-	        // deliveryAddress
-	        params.put("deliveryAddress.city", params.get("billingAddress.city"));
-	        params.put("deliveryAddress.country", params.get("billingAddress.country"));
-	        params.put("deliveryAddress.houseNumberOrName",  params.get("billingAddress.houseNumberOrName"));
-	        params.put("deliveryAddress.postalCode", params.get("billingAddress.postalCode"));
-	        params.put("deliveryAddress.stateOrProvince", params.get("billingAddress.stateOrProvince"));
-	        params.put("deliveryAddress.street", params.get("billingAddress.street"));
-	        params.put("deliveryAddressType", params.get("billingAddressType"));
+        // deliveryAddress
+        params.put("deliveryAddress.city", params.get("billingAddress.city"));
+        params.put("deliveryAddress.country", params.get("billingAddress.country"));
+        params.put("deliveryAddress.houseNumberOrName",  params.get("billingAddress.houseNumberOrName"));
+        params.put("deliveryAddress.postalCode", params.get("billingAddress.postalCode"));
+        params.put("deliveryAddress.stateOrProvince", params.get("billingAddress.stateOrProvince"));
+        params.put("deliveryAddress.street", params.get("billingAddress.street"));
+        params.put("deliveryAddressType", params.get("billingAddressType"));
 	            
 	    		
 		// Shopper data
@@ -185,19 +185,19 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 		 * signature must be encrypted according to the procedure below.
 		 */
 
-	    	// Calculate the data to sign
-	        String signingData = Stream.concat(params.keySet().stream(), params.values().stream())
-	                .map(signingTest -> escapeVal(signingTest))
-	                .collect(Collectors.joining(":"));
+    	 // Calculate the data to sign
+         String signingData = Stream.concat(params.keySet().stream(), params.values().stream())
+                 .map(signingTest -> escapeVal(signingTest))
+                 .collect(Collectors.joining(":"));
         
      
 		 // Create the signature and add it to the parameter map
-	        try {
-	            params.put("merchantSig",calculateHMAC(signingData, hmacKey));
-	        } catch (SignatureException e) {
-	            e.printStackTrace();
-	            return;
-	        }
+         try {
+             params.put("merchantSig",calculateHMAC(signingData, hmacKey));
+         } catch (SignatureException e) {
+             e.printStackTrace();
+             return;
+         }
 	     
 
 		// Set request parameters for use on the JSP page
@@ -230,7 +230,7 @@ public class CreateOpenInvoicePayment_SHA_256 extends HttpServlet {
 	private static String escapeVal(String val) {
         if(val == null) { return ""; }
         return val.replace("\\", "\\\\").replace(":", "\\:");
-    	}
+    }
 	
 	// To calculate the HMAC SHA-256 
 	private static String calculateHMAC(String data, byte[] key)  throws java.security.SignatureException {
