@@ -9,11 +9,6 @@ The code examples in this repository help you integrate with the Adyen platform 
   - CreatePaymentOnHppAdvanced     : Advanced form creating a payment on our HPP
   - CreatePaymentUrl               : Create payment URL on our HPP
 2.API
-  - HttpPost
-    - Authorise3dSecurePayment     : Authorise a 3D Secure payment using HTTP Post
-    - Create3dSecurePayment        : Create a 3D Secure payment using HTTP Post
-    - CreatePaymentAPI             : Create a payment via our API using HTTP Post
-    - CreatePaymentCSE             : Create a Client-Side Encrypted payment using HTTP Post
   - Json
     - Authorise3dSecurePayment     : Authorise a 3D Secure payment using JSON
     - Create3dSecurePayment        : Create a 3D Secure payment using JSON
@@ -25,16 +20,9 @@ The code examples in this repository help you integrate with the Adyen platform 
     - CreatePaymentAPI             : Create a payment via our API using SOAP
     - CreatePaymentCSE             : Create a Client-Side Encrypted payment using SOAP
 3.Notifications
-  - HttpPost
-    - NotificationServer           : Receive our notifications using HTTP Post
   - Json
     - NotificationServer           : Receive our notifications using JSON
 4.Modifications
-  - HttpPost
-    - CancelOrRefundPayment        : Cancel or refund a payment using HTTP Post
-    - CancelPayment                : Cancel a payment using HTTP Post
-    - CapturePayment               : Capture a payment using HTTP Post
-    - RefundPayment                : Request a refund using HTTP Post
   - Json
     - CancelOrRefundPayment        : Cancel or refund a payment using JSON
     - CancelPayment                : Cancel a payment using JSON
@@ -46,10 +34,6 @@ The code examples in this repository help you integrate with the Adyen platform 
     - CapturePayment               : Capture a payment using SOAP
     - RefundPayment                : Request a refund using SOAP
 5.Recurring
-  - HttpPost
-    - CreateRecurringPayment       : Create a recurring payment using HTTP Post
-    - DisableRecurringContract     : Disable a recurring contract using HTTP Post
-    - RetrieveRecurringContract    : Retrieve a recurring contract using HTTP Post
   - Json
     - CreateRecurringPayment       : Create a recurring payment using JSON
     - DisableRecurringContract     : Disable a recurring contract using JSON
@@ -60,13 +44,10 @@ The code examples in this repository help you integrate with the Adyen platform 
     - RetrieveRecurringContract    : Retrieve a recurring contract using SOAP
 6.PaymentMethods
   - GetPaymentMethods              : Get payment methods available for merchant account
-7.OpenInvoice
-  - HttpPost
-    - OpenInvoiceServer            : Open invoice service using HTTP Post
-8.CustomFields
+7.CustomFields
   - HttpPost
     - CustomFieldsServer           : Custom fields service using HTTP Post
-9.Payout
+8.Payout
   - Soap
     - ConfirmPayoutRequest         : Confirm payout request using SOAP
     - DeclinePayoutRequest         : Decline payout request using SOAP
