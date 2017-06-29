@@ -1,7 +1,9 @@
 Adyen Java Integration
 ==============
 The code examples in this repository help you integrate with the Adyen platform using Java. Please go through the code examples and read the documentation in the files itself. Each code example requires you to change some parameters to connect to your Adyen account, such as merchant account and skincode.
-
+## Java API Library
+We have made a library available that contains all of these APIs to make the integration easier. The Library is open-source and available [here](https://github.com/Adyen/adyen-java-api-library).
+In the section 'Library' you can see the code examples on how to use this library.
 ## Examples
 ```
 1.HPP (Hosted Payment Page)
@@ -9,7 +11,12 @@ The code examples in this repository help you integrate with the Adyen platform 
   - CreatePaymentOnHppAdvanced     : Advanced form creating a payment on our HPP
   - CreatePaymentUrl               : Create payment URL on our HPP
 2.API
-  - Json
+  - Library
+    - Authorise3dSecurePayment     : Authorise a 3D Secure payment using Java Library
+    - Create3dSecurePayment        : Create a 3D Secure payment using Java Library
+    - CreatePaymentAPI             : Create a payment via our API using Java Library
+    - CreatePaymentCSE             : Create a Client-Side Encrypted payment using Java Library
+  - JSON
     - Authorise3dSecurePayment     : Authorise a 3D Secure payment using JSON
     - Create3dSecurePayment        : Create a 3D Secure payment using JSON
     - CreatePaymentAPI             : Create a payment via our API using JSON
@@ -20,10 +27,17 @@ The code examples in this repository help you integrate with the Adyen platform 
     - CreatePaymentAPI             : Create a payment via our API using SOAP
     - CreatePaymentCSE             : Create a Client-Side Encrypted payment using SOAP
 3.Notifications
-  - Json
+  - HttpPost
+    - NotificationServer           : Receive our notifications using HTTP Post
+  - JSON
     - NotificationServer           : Receive our notifications using JSON
 4.Modifications
-  - Json
+  - Library
+    - CancelOrRefundPayment        : Cancel or refund a payment using Java Library
+    - CancelPayment                : Cancel a payment using Java Library
+    - CapturePayment               : Capture a payment using Java Library
+    - RefundPayment                : Request a refund using Java Library
+  - JSON
     - CancelOrRefundPayment        : Cancel or refund a payment using JSON
     - CancelPayment                : Cancel a payment using JSON
     - CapturePayment               : Capture a payment using JSON
@@ -34,7 +48,11 @@ The code examples in this repository help you integrate with the Adyen platform 
     - CapturePayment               : Capture a payment using SOAP
     - RefundPayment                : Request a refund using SOAP
 5.Recurring
-  - Json
+  - Library
+    - CreateRecurringPayment       : Create a recurring payment using Java Library
+    - DisableRecurringContract     : Disable a recurring contract using Java Library
+    - RetrieveRecurringContract    : Retrieve a recurring contract using Java Library
+  - JSON
     - CreateRecurringPayment       : Create a recurring payment using JSON
     - DisableRecurringContract     : Disable a recurring contract using JSON
     - RetrieveRecurringContract    : Retrieve a recurring contract using JSON
@@ -43,7 +61,10 @@ The code examples in this repository help you integrate with the Adyen platform 
     - DisableRecurringContract     : Disable a recurring contract using SOAP
     - RetrieveRecurringContract    : Retrieve a recurring contract using SOAP
 6.PaymentMethods
-  - GetPaymentMethods              : Get payment methods available for merchant account
+  - Library
+    - GetPaymentMethods            : Get payment methods available for merchant account using Java Library
+  - JSON
+    - GetPaymentMethods            : Get payment methods available for merchant account using JSON
 7.CustomFields
   - HttpPost
     - CustomFieldsServer           : Custom fields service using HTTP Post
