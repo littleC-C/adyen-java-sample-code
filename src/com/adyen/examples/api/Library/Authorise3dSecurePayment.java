@@ -1,6 +1,7 @@
 package com.adyen.examples.api.Library;
 import com.adyen.Client;
 import com.adyen.enums.Environment;
+import com.adyen.model.PaymentResult;
 import com.adyen.service.Payment;
 import com.adyen.model.PaymentRequest3d;
 import com.adyen.model.BrowserInfo;

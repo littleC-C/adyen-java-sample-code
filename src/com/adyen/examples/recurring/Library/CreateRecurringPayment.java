@@ -1,6 +1,7 @@
 package com.adyen.examples.recurring.Library;
 import com.adyen.Client;
 import com.adyen.enums.Environment;
+import com.adyen.model.AbstractPaymentRequest;
 import com.adyen.model.PaymentRequest;
 import com.adyen.model.PaymentResult;
 import com.adyen.service.Payment;

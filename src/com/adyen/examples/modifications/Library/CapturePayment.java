@@ -1,7 +1,7 @@
 package com.adyen.examples.modifications.Library;
 import com.adyen.Client;
 import com.adyen.enums.Environment;
-import com.adyen.model.modification.CatureRequest;
+import com.adyen.model.modification.CaptureRequest;
 import com.adyen.model.modification.ModificationResult;
 import com.adyen.service.Modification;
 

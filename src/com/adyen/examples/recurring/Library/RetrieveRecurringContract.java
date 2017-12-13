@@ -88,16 +88,15 @@ public class RetrieveRecurringContract {
 
         List<RecurringDetail> recurringDetails = result.getRecurringDetails();
 
-        for (Object recurringDetail : recurringDetails) {
+        for (RecurringDetail recurringDetail : recurringDetails) {
             System.out.println("  > * recurringDetailReference: " + recurringDetail.getRecurringDetailReference());
             System.out.println("    * variant: " + recurringDetail.getVariant());
             System.out.println("    * creationDate: " + recurringDetail.getCreationDate());
             System.out.println("    * bank: " + recurringDetail.getBank());
             System.out.println("    * card: " + recurringDetail.getCard());
-            System.out.println("    * elv: " + recurringDetail.getElv();
+            System.out.println("    * elv: " + recurringDetail.getElv());
             System.out.println("    * name: " + recurringDetail.getName());
-
-
+        }
     }
 
 }

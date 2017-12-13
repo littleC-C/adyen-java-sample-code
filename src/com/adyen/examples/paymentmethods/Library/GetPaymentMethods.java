@@ -3,6 +3,7 @@ import com.adyen.Client;
 import com.adyen.Config;
 import com.adyen.enums.Environment;
 import com.adyen.model.hpp.DirectoryLookupRequest;
+import com.adyen.model.hpp.PaymentMethod;
 import com.adyen.service.HostedPaymentPages;
 import java.util.List;
 

@@ -53,7 +53,7 @@ public class DisableRecurringContract {
         disableRequest.setShopperReference("YourShopperReference");
         disableRequest.setMerchantAccount("YourMerchantAccount");
         disableRequest.setRecurringDetailReference("YourRecurringDetailReference");
-        DisableResult result = recurring.disable(request);
+        DisableResult result = recurring.disable(disableRequest);
 
         /**
          * The response will be a result object with a single field response. If a single detail was disabled the value
